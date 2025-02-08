@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{{ user.restaurant_name }} Menu{% endblock %}
+{% block content %}
+  <h2>{{ user.restaurant_name }} Menu</h2>
+  {% for category in categories %}
+    <h3>{{ category.name }}</h3>
+    <ul class="list-group mb-3">
+      {% for item in category.menu_items %}
+      <li class="list-group-item">
+        <strong>{{ item.name }}</strong> - ${{ item.price }}<br>
+        <small>{{ item.description }}</small>
+      </li>
+      {% else %}
+      <li class="list-group-item">No items available in this category.</li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Home - Digital Menu{% endblock %}
+{% block content %}
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to Digital Menu</h1>
+    <p class="lead">Create your restaurant’s digital menu and share it easily with a QR code!</p>
+    <hr class="my-4">
+    {% if not current_user.is_authenticated %}
+    <p><a class="btn btn-primary btn-lg" href="{{ url_for('main.register') }}" role="button">Get Started</a></p>
+    {% else %}
+    <p><a class="btn btn-primary btn-lg" href="{{ url_for('main.dashboard') }}" role="button">Go to Dashboard</a></p>
+    {% endif %}
+  </div>
+{% endblock %}

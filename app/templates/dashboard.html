@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+  <h2>Dashboard</h2>
+  <div class="row">
+    <!-- Add Category Form -->
+    <div class="col-md-6">
+      <h3>Add Category</h3>
+      <form method="post">
+        {{ category_form.hidden_tag() }}
+        <div class="form-group">
+          {{ category_form.name.label(class="form-control-label") }}
+          {{ category_form.name(class="form-control") }}
+        </div>
+        <div class="form-group">
+          <button type="submit" name="add_category" class="btn btn-primary">
+            {{ category_form.submit.label.text }}
+          </button>
+        </div>
+      </form>
+    </div>
+    <!-- Add Menu Item Form -->
+    <div class="col-md-6">
+      <h3>Add Menu Item</h3>
+      <form method="post">
+        {{ item_form.hidden_tag() }}
+        <div class="form-group">
+          <label for="categorySelect">Select Category</label>
+          <select name="category_id" id="categorySelect" class="form-control">
+            {% for category in categories %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-group">
+          {{ item_form.name.label(class="form-control-label") }}
+          {{ item_form.name(class="form-control") }}
+        </div>
+        <div class="form-group">
+          {{ item_form.description.label(class="form-control-label") }}
+          {{ item_form.description(class="form-control") }}
+        </div>
+        <div class="form-group">
+          {{ item_form.price.label(class="form-control-label") }}
+          {{ item_form.price(class="form-control") }}
+        </div>
+        <div class="form-group">
+          <button type="submit" name="add_item" class="btn btn-primary">
+            {{ item_form.submit.label.text }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <hr>
+  <h3>Your Menu</h3>
+  {% for category in categories %}
+    <h4>{{ category.name }}</h4>
+    <ul class="list-group mb-3">
+      {% for item in category.menu_items %}
+      <li class="list-group-item">
+        <strong>{{ item.name }}</strong> - ${{ item.price }}<br>
+        <small>{{ item.description }}</small>
+      </li>
+      {% else %}
+      <li class="list-group-item">No items in this category yet.</li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+  <a href="{{ url_for('main.download_qr') }}" class="btn btn-success">
+    Download QR Code for Your Menu
+  </a>
+{% endblock %}
