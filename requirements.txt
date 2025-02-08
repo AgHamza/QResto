@@ -6,3 +6,4 @@ Flask-Login
 qrcode
 Werkzeug==2.1.2
 gunicorn
+SQLAlchemy<2.0
