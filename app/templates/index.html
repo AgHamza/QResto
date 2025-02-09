@@ -6,8 +6,10 @@
     <p class="lead">Create your restaurant’s digital menu and share it easily with a QR code!</p>
     <hr class="my-4">
     {% if not current_user.is_authenticated %}
-    <p><a class="btn btn-primary btn-lg" href="{{ url_for('main.register') }}" role="button">Get Started</a></p>
+    <div class="row">
+        <p><a class="btn btn-primary btn-lg" href="{{ url_for('main.register') }}" role="button">Get Started</a></p>
     <p><a class="btn btn-primary btn-lg" href="{{ url_for('main.login') }}" role="button">Log in</a></p>
+    </div>
     {% else %}
     <p><a class="btn btn-primary btn-lg" href="{{ url_for('main.dashboard') }}" role="button">Go to Dashboard</a></p>
     {% endif %}
