@@ -5,6 +5,10 @@ body {
   .navbar-brand {
     font-weight: bold;
   }
+
+  button {
+    padding-top: 7px;
+  }
   
   /* Add any additional custom styling as needed */
   
