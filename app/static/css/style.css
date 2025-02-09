@@ -1,14 +1,14 @@
 body {
     padding-top: 0px;
-  }
-  
-  .navbar-brand {
-    font-weight: bold;
-  }
+}
 
-  button {
+.navbar-brand {
+    font-weight: bold;
+}
+
+button {
     padding-top: 7px;
-  }
-  
-  /* Add any additional custom styling as needed */
-  
+    margin-top: 15px; /* Add margin-top to create space from the form fields */
+}
+
+/* Additional custom styling as needed */
