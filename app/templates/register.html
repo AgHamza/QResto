@@ -1,27 +1,30 @@
 {% extends "base.html" %}
 {% block title %}Register{% endblock %}
 {% block content %}
-  <h2>Register</h2>
-  <form method="post">
-    {{ form.hidden_tag() }}
-    <div class="form-group">
-      {{ form.username.label(class="form-control-label") }}
-      {{ form.username(class="form-control") }}
-    </div>
-    <div class="form-group">
-      {{ form.restaurant_name.label(class="form-control-label") }}
-      {{ form.restaurant_name(class="form-control") }}
-    </div>
-    <div class="form-group">
-      {{ form.password.label(class="form-control-label") }}
-      {{ form.password(class="form-control") }}
-    </div>
-    <div class="form-group">
-      {{ form.password2.label(class="form-control-label") }}
-      {{ form.password2(class="form-control") }}
-    </div>
-    <div class="form-group">
-      {{ form.submit(class="btn btn-primary") }}
-    </div>
-  </form>
+  <div class="register-page simple-register">
+    <div class="register-header"><h2>Register</h2></div>
+    
+    <form method="post" class="register-form">
+      {{ form.hidden_tag() }}
+      <div class="form-group">
+        {{ form.username.label(class="form-control-label") }}
+        {{ form.username(class="form-control simple-input") }}
+      </div>
+      <div class="form-group">
+        {{ form.restaurant_name.label(class="form-control-label") }}
+        {{ form.restaurant_name(class="form-control simple-input") }}
+      </div>
+      <div class="form-group">
+        {{ form.password.label(class="form-control-label") }}
+        {{ form.password(class="form-control simple-input") }}
+      </div>
+      <div class="form-group">
+        {{ form.password2.label(class="form-control-label") }}
+        {{ form.password2(class="form-control simple-input") }}
+      </div>
+      <div class="form-group">
+        {{ form.submit(class="btn btn-primary simple-btn") }}
+      </div>
+    </form>
+  </div>
 {% endblock %}

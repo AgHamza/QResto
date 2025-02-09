@@ -65,3 +65,100 @@ button {
 #accordion .card:first-child {
     border-top: 1px solid rgba(0,0,0,.125);
 }
+
+/* Simple Login Page Styles */
+.simple-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    background-color: #ffffff; /* Pure white background */
+    color: #333; /* Dark text for contrast */
+}
+
+.simple-login .login-header {
+    margin-bottom: 20px;
+}
+
+.simple-login .login-form {
+    background-color: #f8f9fa; /* Light background for the form */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.simple-login .simple-input {
+    background-color: #ffffff; /* White background for inputs */
+    border: 1px solid #ced4da;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.simple-login .simple-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.simple-login .simple-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.simple-login .simple-btn:hover {
+    background-color: #0056b3;
+}
+
+.simple-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background-color: #ffffff; /* Pure white background */
+    color: #333; /* Dark text for contrast */
+}
+
+.simple-register .register-header {
+    margin-bottom: 20px;
+}
+
+.simple-register .register-form {
+    background-color: #f8f9fa; /* Light background for the form */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.simple-register .simple-input {
+    background-color: #ffffff; /* White background for inputs */
+    border: 1px solid #ced4da;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.simple-register .simple-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.simple-register .simple-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.simple-register .simple-btn:hover {
+    background-color: #0056b3;
+}
