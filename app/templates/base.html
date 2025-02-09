@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}Digital Menu{% endblock %}</title>
+  <title>{% block title %}QResto{% endblock %}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <!-- Bootstrap CSS CDN -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -10,7 +10,7 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{{ url_for('main.index') }}">Digital Menu</a>
+    <a class="navbar-brand" href="{{ url_for('main.index') }}">QResto</a>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
         {% if current_user.is_authenticated %}
