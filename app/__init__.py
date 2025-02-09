@@ -6,9 +6,9 @@ from flask_login import LoginManager
 
 # Initialize extensions
 db = SQLAlchemy()
-migrate = Migrate()  # We'll initialize it with the directory later
+migrate = Migrate()  # We will initialize it with the directory parameter below.
 login = LoginManager()
-login.login_view = 'main.login'  # Endpoint for login
+login.login_view = 'main.login'
 
 def create_app(config_class=Config):
     app = Flask(__name__)
