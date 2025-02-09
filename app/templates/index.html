@@ -1,21 +1,202 @@
 {% extends "base.html" %}
-{% block title %}Home - Digital Menu{% endblock %}
+{% block title %}Home - QResto: Digital Menu Solutions{% endblock %}
 {% block content %}
-  <div class="jumbotron">
-    <h1 class="display-4">Welcome to QResto</h1>
-    <p class="lead">Create your restaurant’s digital menu and share it easily with a QR code!</p>
-    <hr class="my-4">
-    {% if not current_user.is_authenticated %}
-    <div class="row">
-        <div>
-            <p><a class="btn btn-primary btn-lg" href="{{ url_for('main.register') }}" role="button">Get Started</a></p>
+  <!-- Hero Section -->
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="display-4">Welcome to QResto</h1>
+      <p class="lead">Revolutionize your restaurant experience with our digital menu solution. Create, customize, and share your menu effortlessly with QR codes!</p>
+      <hr class="my-4">
+      {% if not current_user.is_authenticated %}
+      <div class="row justify-content-center">
+        <div class="col-md-3">
+          <p><a class="btn btn-primary btn-lg" href="{{ url_for('main.register') }}" role="button">Get Started</a></p>
         </div>
-        <div>
-            <p><a class="btn btn-primary btn-lg" href="{{ url_for('main.login') }}" role="button">Log in</a></p>
+        <div class="col-md-3">
+          <p><a class="btn btn-outline-primary btn-lg" href="{{ url_for('main.login') }}" role="button">Log In</a></p>
         </div>
+      </div>
+      {% else %}
+      <p><a class="btn btn-primary btn-lg" href="{{ url_for('main.dashboard') }}" role="button">Go to Dashboard</a></p>
+      {% endif %}
     </div>
-    {% else %}
-    <p><a class="btn btn-primary btn-lg" href="{{ url_for('main.dashboard') }}" role="button">Go to Dashboard</a></p>
-    {% endif %}
-  </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Why Choose QResto?</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="feature-item text-center">
+            <i class="fa fa-qrcode fa-3x mb-3 text-primary"></i>
+            <h3>QR Code Integration</h3>
+            <p>Seamlessly integrate QR codes into your restaurant's workflow for easy menu access.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-item text-center">
+            <i class="fa fa-pencil fa-3x mb-3 text-primary"></i>
+            <h3>Customizable Menus</h3>
+            <p>Design menus that reflect your brand with our user-friendly interface.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-item text-center">
+            <i class="fa fa-users fa-3x mb-3 text-primary"></i>
+            <h3>Multi-User Support</h3>
+            <p>Manage your menu with team members, ensuring everyone stays in sync.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">How It Works</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="step text-center">
+            <i class="fa fa-sign-in-alt fa-3x mb-3 text-success"></i>
+            <h3>1. Sign Up</h3>
+            <p>Register your restaurant with QResto in minutes.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step text-center">
+            <i class="fa fa-edit fa-3x mb-3 text-success"></i>
+            <h3>2. Create Your Menu</h3>
+            <p>Build your digital menu with our intuitive tools.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step text-center">
+            <i class="fa fa-share-alt fa-3x mb-3 text-success"></i>
+            <h3>3. Share with QR Code</h3>
+            <p>Generate a QR code and share it with your customers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">What Our Customers Say</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <blockquote class="blockquote text-center">
+            <p class="mb-0">"QResto has transformed how we present our menu. Our customers love the touchless experience!"</p>
+            <footer class="blockquote-footer">Chef Mohammed, <cite title="Source Title">Taste of Marrakesh</cite></footer>
+          </blockquote>
+        </div>
+        <div class="col-md-6">
+          <blockquote class="blockquote text-center">
+            <p class="mb-0">"The ease of updating our menu with QResto has saved us so much time."</p>
+            <footer class="blockquote-footer">Amina, Owner of <cite title="Source Title">Café Atlas</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Choose Your Plan</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card pricing-card text-center">
+            <div class="card-header">
+              <h4>Basic</h4>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title pricing-card-title">Free</h5>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>1 Menu</li>
+                <li>Basic Customization</li>
+                <li>QR Code Generation</li>
+              </ul>
+              <a href="#" class="btn btn-outline-primary">Choose Plan</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card pricing-card text-center">
+            <div class="card-header">
+              <h4>Pro</h4>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title pricing-card-title">$19/month</h5>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Unlimited Menus</li>
+                <li>Advanced Customization</li>
+                <li>QR Code & Analytics</li>
+                <li>Team Management</li>
+              </ul>
+              <a href="#" class="btn btn-primary">Choose Plan</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card pricing-card text-center">
+            <div class="card-header">
+              <h4>Enterprise</h4>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title pricing-card-title">Custom</h5>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>All Pro Features</li>
+                <li>Dedicated Support</li>
+                <li>Custom Integrations</li>
+                <li>Multi-Location Management</li>
+              </ul>
+              <a href="#" class="btn btn-outline-primary">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                How do I get started with QResto?
+              </button>
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              Simply sign up at our website, and you'll be guided through setting up your first digital menu.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Can I customize my menu design?
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              Yes, QResto offers extensive customization options from colors to layout to match your restaurant's brand.
+            </div>
+          </div>
+        </div>
+        <!-- Add more FAQs as needed -->
+      </div>
+    </div>
+  </section>
 {% endblock %}
