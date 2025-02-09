@@ -7,8 +7,12 @@
     <hr class="my-4">
     {% if not current_user.is_authenticated %}
     <div class="row">
-        <p><a class="btn btn-primary btn-lg" href="{{ url_for('main.register') }}" role="button">Get Started</a></p>
-    <p><a class="btn btn-primary btn-lg" href="{{ url_for('main.login') }}" role="button">Log in</a></p>
+        <div>
+            <p><a class="btn btn-primary btn-lg" href="{{ url_for('main.register') }}" role="button">Get Started</a></p>
+        </div>
+        <div>
+            <p><a class="btn btn-primary btn-lg" href="{{ url_for('main.login') }}" role="button">Log in</a></p>
+        </div>
     </div>
     {% else %}
     <p><a class="btn btn-primary btn-lg" href="{{ url_for('main.dashboard') }}" role="button">Go to Dashboard</a></p>
