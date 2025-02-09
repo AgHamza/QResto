@@ -13,9 +13,9 @@
           {{ category_form.name(class="form-control") }}
         </div>
         <div class="form-group">
-          <button type="submit" name="add_category" class="btn btn-primary">
+          <a type="submit" name="add_category" class="btn btn-primary">
             {{ category_form.submit.label.text }}
-          </button>
+          </a>
         </div>
       </form>
     </div>
@@ -45,9 +45,9 @@
           {{ item_form.price(class="form-control") }}
         </div>
         <div class="form-group">
-          <button type="submit" name="add_item" class="btn btn-primary">
+          <a type="submit" name="add_item" class="btn btn-primary">
             {{ item_form.submit.label.text }}
-          </button>
+          </a>
         </div>
       </form>
     </div>
@@ -70,4 +70,8 @@
   <a href="{{ url_for('main.download_qr') }}" class="btn btn-success">
     Download QR Code for Your Menu
   </a>
+  <a href="{{ url_for('main.menu', username=current_user.username, _external=True) }}" class="btn btn-success">
+    Preview Your Menu
+  </a>
+  
 {% endblock %}
